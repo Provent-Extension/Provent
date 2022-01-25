@@ -1,0 +1,15 @@
+{
+  // Required
+  "manifest_version": 3,
+  "name": "Self-directed",
+  "version": "1",
+  // https://medium.com/@ryanfarney/creating-a-chrome-extension-that-will-open-in-a-new-tab-bc06b7eb54aa
+  
+  "chrome_url_overrides": {
+	"newtab": "index.html"
+  },
+  "permissions": [
+	"tabs"
+  ]
+  
+}
