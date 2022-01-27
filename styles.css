@@ -5,7 +5,7 @@ body {
 .tint {
 	position: fixed;
 	background: black;
-	opacity: 0.5;
+	opacity: 0.3;
 	z-index: -1;
 	height: 100%;
 	width: 100%;
@@ -16,7 +16,8 @@ body {
 	position: fixed;
 	background: url("https://images.unsplash.com/photo-1553564932-e3d28a20a317?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1025&q=80");
 	background-repeat: no-repeat;
-	background-size: 100% 100%;
+	background-size: 100% auto;
+	background-position: center; /* Center the image */
 	height: 100%;
 	width: 100%;
 	z-index: -2;
@@ -73,7 +74,8 @@ body {
 	color: white;
 	border: none;
 	border-bottom: 3px solid white;
-	width: 40%;
+	width: 30%;
+	font-size: 1.5em;
 }
 
 .search_bar::placeholder {
@@ -83,4 +85,29 @@ body {
 
 .search_bar:focus {
     outline: none;
+}
+
+.search_button {
+	background: transparent;
+	border: none;
+	transition: 0.3s;
+}
+
+.search_button:hover {
+	transform: scale(1.2);
+}
+
+.fa-search {
+	color: white;
+	font-size: 1.5em;
+}
+
+.to_do_container {
+	border: white 2px solid;
+	border-radius: 30px;
+	height: 600px;
+	width: 40%;
+	display: block;
+	margin: 0 auto;
+	margin-top: 20px;
 }
