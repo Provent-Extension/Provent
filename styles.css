@@ -1,3 +1,9 @@
+* {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+}
+
 body {
 	margin: 0;
 }
@@ -39,6 +45,12 @@ body {
 	width: 120px;
 	height: 40px;
 	background: transparent;
+	transition: 0.3s;
+	cursor: pointer;
+}
+
+.pomodoro_type_button:hover {
+	background: #88C3FA;
 }
 
 .pomodoro_button_selected {
@@ -54,6 +66,12 @@ body {
 	height: 40px;
 	background: transparent;	
 	font-size: 1.5em;
+	transition: 0.3s;
+	cursor: pointer;
+}
+
+.pomodoro_start_button:hover {
+	background: #88C3FA;
 }
 
 .timer {
@@ -103,11 +121,48 @@ body {
 }
 
 .to_do_container {
+	margin-top: 20px;
+}
+
+.add_task_container {
+	position: relative;
+	text-align: center;
+	margin-top: 40px;
+}
+
+.add_task_text {
+	color: white;
+	font-size: 1em;
+}
+
+.task_bar {
+	background: Transparent;
+	color: white;
+	border: none;
+	border-bottom: 3px solid white;
+	width: 30%;
+	font-size: 1.5em;
+}
+
+.task_bar::placeholder {
+	color: white;
+	opacity: 1; /* Firefox */
+  }
+
+.task_bar:focus {
+    outline: none;
+}
+
+.tasks_container {
 	border: white 2px solid;
 	border-radius: 30px;
 	height: 600px;
 	width: 40%;
 	display: block;
 	margin: 0 auto;
-	margin-top: 20px;
+}
+
+.fa-plus {
+	color: white;
+	font-size: 1.5em;	
 }

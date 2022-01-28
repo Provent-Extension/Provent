@@ -9,6 +9,10 @@
 		<!--Font Awesome-->
 		<script src="https://kit.fontawesome.com/ba7447c34f.js" crossorigin="anonymous"></script>
 		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+
 	</head>
 	
 	<body>
@@ -17,9 +21,9 @@
 		
 		<div class="pomodoro_timer">
 			<div class="pomodoro_type_buttons">
-				<button class="pomodoro_type_button pomodoro_button_selected" onclick="pomodoro()">Pomodoro</button>
-				<button class="pomodoro_type_button" onclick="short_break()">Short Break</button>
-				<button class="pomodoro_type_button" onclick="long_break()">Long Break</button>
+				<button class="pomodoro_type_button pomodoro_button_selected" id="pomodoro_button" onclick="pomodoro()">Pomodoro</button>
+				<button class="pomodoro_type_button" id="short_pomodoro_button" onclick="short_break()">Short Break</button>
+				<button class="pomodoro_type_button" id="long_pomodoro_button" onclick="long_break()">Long Break</button>
 			</div>
 			
 			<h1 class="timer"><span id="minute">25</span>:<span id="second">00</span></h1>
@@ -34,7 +38,17 @@
 			</form>
 		</div>
 		
+
 		<div class="to_do_container">
+			
+			<div class="add_task_container">
+				<input class="task_bar" placeholder="Task...">
+				<button type="submit" class="search_button"><i class="fas fa-plus"></i></button>	
+			</div>
+	
+			<div class="tasks_container">
+
+			</div>
 			
 		</div>
 		
