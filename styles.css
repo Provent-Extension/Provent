@@ -120,14 +120,23 @@ body {
 	font-size: 1.5em;
 }
 
-.to_do_container {
+.tasks_container {
 	margin-top: 20px;
+	border: white 2px solid;
+	border-radius: 30px;
+	min-height: 200px;
+	height: auto;
+	width: 20%;
+	float: right;
+	display: block;
+	position: relative;
 }
+
 
 .add_task_container {
 	position: relative;
-	text-align: center;
-	margin-top: 40px;
+	text-align: left;
+	margin: 15px;
 }
 
 .add_task_text {
@@ -140,7 +149,7 @@ body {
 	color: white;
 	border: none;
 	border-bottom: 3px solid white;
-	width: 30%;
+	width: 100%;
 	font-size: 1.5em;
 }
 
@@ -151,15 +160,6 @@ body {
 
 .task_bar:focus {
     outline: none;
-}
-
-.tasks_container {
-	border: white 2px solid;
-	border-radius: 30px;
-	height: 600px;
-	width: 40%;
-	display: block;
-	margin: 0 auto;
 }
 
 .fa-plus {
