@@ -63,6 +63,10 @@ function run_pomodoro(mins) {
 
 document.getElementById("start_pomodoro_button").addEventListener("click", start_pomodoro);
 
+document.getElementById("pomodoro_button").addEventListener("click", pomodoro);
+document.getElementById("short_pomodoro_button").addEventListener("click", short_break);
+document.getElementById("long_pomodoro_button").addEventListener("click", long_break);
+
 function start_pomodoro() {
 	minute = document.getElementById("minute").innerHTML;
 	
