@@ -1,7 +1,7 @@
 {
   // Required
   "manifest_version": 3,
-  "name": "Self-directed",
+  "name": "Provent",
   "version": "1",
   // https://medium.com/@ryanfarney/creating-a-chrome-extension-that-will-open-in-a-new-tab-bc06b7eb54aa
   
@@ -11,5 +11,4 @@
   "permissions": [
 	"tabs"
   ]
-  
 }

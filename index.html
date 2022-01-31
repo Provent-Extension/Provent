@@ -3,7 +3,7 @@
 	<head>
 		
 		<title>new tab</title>
-		
+		<link rel="icon" href="images/logo-transparent.png">
 		<link rel="stylesheet" href="styles.css">
 		
 		<!--Font Awesome-->
@@ -42,9 +42,13 @@
 
 		<div class="tasks_container">
 			<div class="add_task_container">
-				<input class="task_bar" placeholder="Add task...">
-				<button type="submit" class="search_button"><i class="fas fa-plus"></i></button>	
+				<input class="task_bar" id="task_input" placeholder="Add task...">
+				<button type="submit" class="add_task_button" id="add_task_button">+</button>	
 			</div>
+
+			<ul id="tasks_list">
+				
+			</ul>
 
 
 		</div>

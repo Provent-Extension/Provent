@@ -9,7 +9,6 @@ function pomodoro() {
 	document.getElementById("short_pomodoro_button").classList.remove("pomodoro_button_selected");
 	document.getElementById("long_pomodoro_button").classList.remove("pomodoro_button_selected");
 	clearInterval(interval); 
-
 }
 
 function short_break() {
@@ -75,6 +74,36 @@ document.getElementById("short_pomodoro_button").addEventListener("click", short
 document.getElementById("long_pomodoro_button").addEventListener("click", long_break);
 
 function start_pomodoro() {
+	if (!("Notification" in window)) {
+		alert("This browser does not support desktop notification");
+	  }
+	
+	  // Let's check whether notification permissions have already been granted
+	  else if (Notification.permission === "granted") {
+		// If it's okay let's create a notification
+		var notification = new Notification("Hi there!");
+	  }
+	
+	  // Otherwise, we need to ask the user for permission
+	  else if (Notification.permission !== "denied") {
+		Notification.requestPermission().then(function (permission) {
+		  // If the user accepts, let's create a notification
+		  if (permission === "granted") {
+			var notification = new Notification("Hi there!");
+		  }
+		});
+	  }
+
+	  else if (Notification.permission !== "default") {
+		Notification.requestPermission().then(function (permission) {
+		  // If the user accepts, let's create a notification
+		  if (permission === "granted") {
+			var notification = new Notification("Hi there!");
+		  }
+		});
+	  }
+
+
 	minute = document.getElementById("minute").innerHTML;
 	
 
@@ -110,3 +139,34 @@ function start_pomodoro() {
 	}
 
 }
+
+
+function add_task_button() {
+	the_task = document.getElementById("task_input").value;
+	
+	tasks_list = document.getElementById("tasks_list");
+
+	const task = document.createElement("li");
+	task.innerHTML = the_task;
+	task.classList.add("a_task");
+	
+
+	// <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+	// REPLACE LI WITH INPUT ^^
+
+	// Add a checkbox beside the task
+	// task.appendChild(check_box)
+
+	// Add a X beside the task
+	const delete_button = document.createElement('button');
+	delete_button.innerHTML = "X";
+	task.appendChild(delete_button);
+
+
+	tasks_list.appendChild(task);
+
+
+
+}
+
+document.getElementById("add_task_button").addEventListener("click", add_task_button);
