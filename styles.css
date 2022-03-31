@@ -181,4 +181,10 @@ body {
 
 .a_task {
 	color: white;
+	font-weight: bold;
+}
+
+.cross_out {
+	color: rgb(204, 204, 204);
+	text-decoration: line-through;
 }
