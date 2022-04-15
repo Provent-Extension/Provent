@@ -81,12 +81,41 @@ body {
 	margin: 0px;
 }
 
+.youtube_container {
+	position: absolute;
+	right: 0px;
+	top: 20%;
+}
+
+.youtube_button {
+	background: #FFFFFF;
+	width: 42px;
+	height: 46px;
+	border-radius: 20px 0px 0px 20px;
+	cursor: pointer;
+}
+
+.youtube_logo {
+	width: 30px;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+	position: absolute;
+	left: 0%;
+	transform: translate(50%, 0%);
+}
+
+.youtube_player_embed {
+	height: 200px;
+	width: 200px;
+	background: #333333;
+}
+
 .search_bar_container {
 	position: relative;
 	text-align: center;
 	margin-top: 40px;
 }
-
 .search_bar {
 	background: Transparent;
 	color: white;
@@ -177,6 +206,10 @@ body {
 
 .tasks_list {
 	list-style-type: none;
+	padding: 0%;
+	width: 95%;
+	display: block;
+	margin: 0 auto;
 }
 
 .a_task {
@@ -187,4 +220,20 @@ body {
 .cross_out {
 	color: rgb(204, 204, 204);
 	text-decoration: line-through;
+}
+
+.task_checkbox {
+	/* transform: scale(2); */
+	/* visibility: none; */
+	/* opacity: 0; */
+}
+
+.delete_task_button {
+	background: transparent;
+	color: white;
+	border: none;
+	font-weight: bold;
+	float: right;
+	right: 20px;
+	position: relative;
 }

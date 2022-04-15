@@ -1,3 +1,11 @@
+function slide_youtube() {
+	alert("ok");
+	
+}
+
+// YouTube onclick
+document.getElementById("youtube_button").addEventListener("click", slide_youtube);
+
 function load_tasks() {
 	saved_tasks_string = localStorage.getItem("tasks");
 
@@ -28,6 +36,7 @@ function load_tasks() {
 		// Add a checkbox beside the task
 		const checkbox = document.createElement("input");
 		checkbox.type = "checkbox";
+		checkbox.classList.add("task_checkbox")
 
 		// See if the task is crossed out
 		if (task_data_element.getElementsByTagName('span')[0].classList.contains("cross_out")) {
@@ -65,6 +74,7 @@ function load_tasks() {
 		// Add a X beside the task
 		const delete_button = document.createElement('button');
 		delete_button.innerHTML = "X";
+		delete_button.classList.add("delete_task_button")
 		task_container.appendChild(delete_button);
 
 		// Removes the task when the button is clicked
@@ -272,6 +282,7 @@ function add_task_button() {
 	// Add a checkbox beside the task
 	const checkbox = document.createElement("input");
 	checkbox.type = "checkbox";
+	checkbox.classList.add("task_checkbox")
 	task_container.appendChild(checkbox);
 
 	// Crosses out the task when the box is clicked
@@ -299,6 +310,7 @@ function add_task_button() {
 	// Add a X beside the task
 	const delete_button = document.createElement('button');
 	delete_button.innerHTML = "X";
+	delete_button.classList.add("delete_task_button")
 	task_container.appendChild(delete_button);
 
 	// Removes the task when the button is clicked
@@ -321,4 +333,7 @@ document.getElementById("task_input").addEventListener("keyup",
 	}
 );
 
+// Add task button onclick
 document.getElementById("add_task_button").addEventListener("click", add_task_button);
+
+
