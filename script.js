@@ -97,6 +97,8 @@ function pomodoro() {
 	minute.innerHTML = 25;
 	second.innerHTML = "00";
 
+	start_pomodoro_button.innerHTML = "Start";
+
 	document.getElementById("pomodoro_button").classList.add("pomodoro_button_selected");
 	document.getElementById("short_pomodoro_button").classList.remove("pomodoro_button_selected");
 	document.getElementById("long_pomodoro_button").classList.remove("pomodoro_button_selected");
@@ -109,6 +111,8 @@ function short_break() {
 	
 	minute.innerHTML = "05";
 	second.innerHTML = "00";
+
+	start_pomodoro_button.innerHTML = "Start";
 
 	document.getElementById("pomodoro_button").classList.remove("pomodoro_button_selected");
 	document.getElementById("short_pomodoro_button").classList.add("pomodoro_button_selected");
@@ -124,6 +128,8 @@ function long_break() {
 	minute.innerHTML = 15;
 	second.innerHTML = "00";
 
+	start_pomodoro_button.innerHTML = "Start";
+
 	document.getElementById("pomodoro_button").classList.remove("pomodoro_button_selected");
 	document.getElementById("short_pomodoro_button").classList.remove("pomodoro_button_selected");
 	document.getElementById("long_pomodoro_button").classList.add("pomodoro_button_selected");
@@ -135,6 +141,14 @@ var seconds = 0;
 var interval ;
 
 function run_pomodoro(mins) {
+	// If it's the 25 minute timer, change the status in the Chrome Storage
+	if (mins == "25") {
+		chrome.storage.sync.set({"pomo_status": "productivity"}, function() {
+			console.log('Value is set to productivity');
+		});
+	}
+
+
 	minute = document.getElementById("minute");
 	second = document.getElementById("second");
 

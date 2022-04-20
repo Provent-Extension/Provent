@@ -82,6 +82,7 @@ body {
 }
 
 .youtube_container {
+	display: none; /*For now*/
 	position: absolute;
 	right: 0px;
 	top: 20%;
