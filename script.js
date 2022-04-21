@@ -118,6 +118,10 @@ function short_break() {
 	document.getElementById("short_pomodoro_button").classList.add("pomodoro_button_selected");
 	document.getElementById("long_pomodoro_button").classList.remove("pomodoro_button_selected");
 	
+	chrome.storage.sync.set({"pomo_status": "break"}, function() {
+		console.log('Value is set to break');
+	});
+
 	clearInterval(interval); 
 }
 
@@ -145,6 +149,12 @@ function run_pomodoro(mins) {
 	if (mins == "25") {
 		chrome.storage.sync.set({"pomo_status": "productivity"}, function() {
 			console.log('Value is set to productivity');
+		});
+	}
+
+	else {
+		chrome.storage.sync.set({"pomo_status": "break"}, function() {
+			console.log('Value is set to break');
 		});
 	}
 
