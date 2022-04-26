@@ -2,6 +2,13 @@
     position: fixed;
     height: 100vh;
     width: 100vw;
-    background: blue;
+    background: #FFFFFF;
     top: 0;
+    z-index: 9999 !important;
+}
+
+.heading_text {
+    position: relative;
+    font-size: 3em;
+    top: 10%;
 }
