@@ -1,5 +1,5 @@
 # Provent
 
-A productivity Chrome Extension like Momentum!
+A productivity Chrome Extension!
 
 (Coming soon)
