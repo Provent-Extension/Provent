@@ -4,6 +4,9 @@ chrome.storage.sync.get("end_time", function (obj) {
 	const date = new Date();
 	let current_time = date.getTime();
 
+
+	console.log(end_time)
+	console.log(current_time)
 	// Timer has ended
 	if (end_time <= current_time) {
 		console.log("TIMER OVER!!! YAY!!!");
@@ -11,8 +14,9 @@ chrome.storage.sync.get("end_time", function (obj) {
 
 	// Timer has not ended yet
 	else {
-		seconds_left = end_time - current_time;
-		minutes_left = seconds_left/60000
+		milliseconds_left = end_time - current_time;
+		minutes_left = (milliseconds_left/1000)/60;
+		console.log(minutes_left);
 		run_pomodoro(minutes_left)
 		console.log("TIMER NOT ENDED!! GET BACK TO WORK!");
 	}
@@ -82,12 +86,16 @@ function run_pomodoro(mins) {
     let start_time = date.getTime();
 
     // Calculates the end time
-    end_time = start_time + (mins * 60000);
-	seconds_left = end_time - start_time;
-	minutes_left = seconds_left/60000
+    end_time = start_time + (mins * 60000); // (60000 cause milliseconds)
+
+
+	milliseconds_left = end_time - start_time;
+	minutes_left = (milliseconds_left/1000)/60;
+
+	console.log(minutes_left)
 
 	chrome.storage.sync.set({"end_time": end_time}, function() {
-		console.log('End time is set to' + end_time);
+		console.log('End time is set to ' + end_time + " and start time is " + start_time);
 	});
 
 	console.log(minutes_left)
@@ -117,12 +125,21 @@ function run_pomodoro(mins) {
    seconds = mins*60 || 0;     
    console.log("running")
    interval = setInterval(function() {
-	   console.log("subtracting timer")
+
         seconds--;
 		
-		minute.innerHTML = ("0" + (seconds/60 | 0)).slice(-2);
-		second.innerHTML = ("0" + (seconds%60)).slice(-2);
-		console.log("modifying text")
+		// Changes the text on the timer
+		minutes_text = ("0" + (seconds/60 | 0)).split("."); // Removes decimal in seconds
+		minutes_text = minutes_text[0].slice(-2); // Removes the "0" if it is 3 digits
+		minute.innerHTML = minutes_text;
+
+		
+		seconds_text = ("0" + (seconds%60)).split("."); // Removes decimal in seconds
+		seconds_text = seconds_text[0].slice(-2); // Removes the "0" if it is 3 digits
+		
+		second.innerHTML = seconds_text;
+
+
         // If over
         if(!seconds){
              clearInterval(interval); 
