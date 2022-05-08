@@ -22,6 +22,12 @@
       "css": ["blocksite.css"],
       "js": ["blocksite.js"]
     }
-  ]
+  ],
+  "icons": {
+    "16": "images/logosmall.png",
+    "32": "images/logosmall.png",
+    "48": "images/logosmall.png",
+    "128": "images/logosmall.png"
+  }
 
 }

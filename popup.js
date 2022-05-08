@@ -34,6 +34,12 @@ function pomodoro() {
 	document.getElementById("pomodoro_button").classList.add("pomodoro_button_selected");
 	document.getElementById("short_pomodoro_button").classList.remove("pomodoro_button_selected");
 	document.getElementById("long_pomodoro_button").classList.remove("pomodoro_button_selected");
+
+	// Resets end_time
+	chrome.storage.sync.set({"end_time": 0}, function() {
+		console.log("End time has been reset");
+	});
+
 	clearInterval(interval); 
 }
 
@@ -52,6 +58,11 @@ function short_break() {
 	
 	chrome.storage.sync.set({"pomo_status": "break"}, function() {
 		console.log('Value is set to break');
+	});
+
+	// Resets end_time
+	chrome.storage.sync.set({"end_time": 0}, function() {
+		console.log("End time has been reset");
 	});
 
 	clearInterval(interval); 
@@ -74,6 +85,12 @@ function long_break() {
 		console.log('Value is set to break');
 	});
 
+	
+	// Resets end_time
+	chrome.storage.sync.set({"end_time": 0}, function() {
+		console.log("End time has been reset");
+	});
+
 	clearInterval(interval); 
 }
 
@@ -84,6 +101,8 @@ var interval ;
 function run_pomodoro(mins) {
     const date = new Date();
     let start_time = date.getTime();
+
+	start_pomodoro_button.innerHTML = "Pause";
 
     // Calculates the end time
     end_time = start_time + (mins * 60000); // (60000 cause milliseconds)
