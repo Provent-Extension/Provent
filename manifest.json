@@ -2,14 +2,13 @@
   "manifest_version": 3,
   "name": "Provent",
   "version": "1",
-  // https://medium.com/@ryanfarney/creating-a-chrome-extension-that-will-open-in-a-new-tab-bc06b7eb54aa
 
   "chrome_url_overrides": {
     "newtab": "index.html"
   },
 
   "permissions": [
-    "tabs", "storage"
+    "tabs", "storage", "scripting"
   ],
 
   "action": {
@@ -18,11 +17,15 @@
 
   "content_scripts": [
     {
-      "matches": ["https://www.instagram.com/*", "https://www.youtube.com/*"],
+      "matches": ["<all_urls>"],
       "css": ["blocksite.css"],
       "js": ["blocksite.js"]
     }
   ],
+  "web_accessible_resources": [{
+    "resources": ["blocksite.js"],
+    "matches": ["<all_urls>"]
+  }],
   "icons": {
     "16": "images/logosmall.png",
     "32": "images/logosmall.png",

@@ -1,89 +1,178 @@
-chrome.storage.sync.get("pomo_status", function (obj) {
-	let pomo_status = obj["pomo_status"]
+chrome.storage.sync.get("pomo_type", function (obj) {
+	let pomo_type = obj["pomo_type"]
 
 	// Timer is on
-	if (pomo_status == "productivity") {
+	if (pomo_type == "productivity") {
 		document.getElementById("short_pomodoro_button").classList.remove("pomodoro_button_selected");
 		document.getElementById("pomodoro_button").classList.add("pomodoro_button_selected");
 		document.getElementById("long_pomodoro_button").classList.remove("pomodoro_button_selected");
 
-		chrome.storage.sync.get("end_time", function (obj) {
-			let end_time = obj["end_time"];
-		
-			const date = new Date();
-			let current_time = date.getTime();
-			
-			// Timer has ended
-			if (end_time <= current_time) {
-				console.log("TIMER OVER!!! YAY!!!");
+		chrome.storage.sync.get("pomo_status", function (obj) {
+			if (obj["pomo_status"] == "paused") {
+				
+				chrome.storage.sync.get("paused_minutes", function (obj) {
+					let minutes_left = obj["paused_minutes"];
+					document.getElementById("minute").innerHTML = minutes_left;
+				})
+
+				chrome.storage.sync.get("paused_seconds", function (obj) {
+					let seconds_left = obj["paused_seconds"];
+					document.getElementById("second").innerHTML = seconds_left;
+				})
 			}
-		
-			// Timer has not ended yet
+
 			else {
-				milliseconds_left = end_time - current_time;
-				minutes_left = (milliseconds_left/1000)/60;
-				console.log(minutes_left);
-				run_pomodoro(minutes_left)
-				console.log("TIMER NOT ENDED!! GET BACK TO WORK!");
+				chrome.storage.sync.get("end_time", function (obj) {
+					let end_time = obj["end_time"];
+				
+					const date = new Date();
+					let current_time = date.getTime();
+					
+					// Timer has ended
+					if (end_time <= current_time) {
+						console.log("TIMER OVER!!! YAY!!!");
+					}
+				
+					// Timer has not ended yet
+					else {
+						milliseconds_left = end_time - current_time;
+						minutes_left = (milliseconds_left/1000)/60;
+						console.log(minutes_left);
+						run_pomodoro(minutes_left)
+						console.log("TIMER NOT ENDED!! GET BACK TO WORK!");
+					}
+				});
 			}
-		});
+		})
+
 	}
 
-	// Timer is paused
-	else if (pomo_status == "paused") {
+	// // Timer is paused
+	// else if (pomo_status == "paused") {
 
-		chrome.storage.sync.get("paused_minutes", function (obj) {
-				let minutes_left = obj["paused_minutes"];
-				document.getElementById("minute").innerHTML = minutes_left;
-			}
-		)
+	// 	chrome.storage.sync.get("paused_minutes", function (obj) {
+	// 			let minutes_left = obj["paused_minutes"];
+	// 			document.getElementById("minute").innerHTML = minutes_left;
+	// 		}
+	// 	)
 
-		chrome.storage.sync.get("paused_seconds", function (obj) {
-				let seconds_left = obj["paused_seconds"];
-				document.getElementById("second").innerHTML = seconds_left;
-			}
-		)
+	// 	chrome.storage.sync.get("paused_seconds", function (obj) {
+	// 			let seconds_left = obj["paused_seconds"];
+	// 			document.getElementById("second").innerHTML = seconds_left;
+	// 		}
+	// 	)
 
-	}
 
-	else if (pomo_status == "long_break") {
-		alert("timer is on long_break");
+	// }
+
+	else if (pomo_type == "long_break") {
+		// alert("timer is on long_break");
 		document.getElementById("short_pomodoro_button").classList.remove("pomodoro_button_selected");
 		document.getElementById("pomodoro_button").classList.remove("pomodoro_button_selected");
 		document.getElementById("long_pomodoro_button").classList.add("pomodoro_button_selected");
+		
+		minute = document.getElementById("minute");
+		second = document.getElementById("second");
+		
+		minute.innerHTML = "15";
+		second.innerHTML = "00";
+
+		// If not paused, run long break
+		chrome.storage.sync.get("pomo_status", function (obj) {
+
+			if (obj["pomo_status"] == "paused") {
+				chrome.storage.sync.get("paused_minutes", function (obj) {
+					let minutes_left = obj["paused_minutes"];
+					document.getElementById("minute").innerHTML = minutes_left;
+				})
+
+				chrome.storage.sync.get("paused_seconds", function (obj) {
+					let seconds_left = obj["paused_seconds"];
+					document.getElementById("second").innerHTML = seconds_left;
+				})
+			}
+
+			else {
+				chrome.storage.sync.get("end_time", function (obj) {
+					let end_time = obj["end_time"];
+				
+					const date = new Date();
+					let current_time = date.getTime();
+					
+					// Timer has ended
+					if (end_time <= current_time) {
+						console.log("TIMER OVER!!! YAY!!!");
+					}
+				
+					// Timer has not ended yet
+					else {
+						milliseconds_left = end_time - current_time;
+						minutes_left = (milliseconds_left/1000)/60;
+						console.log(minutes_left);
+						run_pomodoro(minutes_left)
+						console.log("TIMER NOT ENDED!! GET BACK TO WORK!");
+					}
+				});
+			}
+			
+		})
+
 	}
 
-	else if (pomo_status == "short_break") {
+	else if (pomo_type == "short_break") {
 		document.getElementById("short_pomodoro_button").classList.add("pomodoro_button_selected");
 		document.getElementById("pomodoro_button").classList.remove("pomodoro_button_selected");
 		document.getElementById("long_pomodoro_button").classList.remove("pomodoro_button_selected");
+		
+		minute = document.getElementById("minute");
+		second = document.getElementById("second");
+		
+		minute.innerHTML = "05";
+		second.innerHTML = "00";
+
+		// If not paused, run short_break
+		chrome.storage.sync.get("pomo_status", function (obj) {
+
+			if (obj["pomo_status"] == "paused") {
+				chrome.storage.sync.get("paused_minutes", function (obj) {
+					let minutes_left = obj["paused_minutes"];
+					document.getElementById("minute").innerHTML = minutes_left;
+				})
+
+				chrome.storage.sync.get("paused_seconds", function (obj) {
+					let seconds_left = obj["paused_seconds"];
+					document.getElementById("second").innerHTML = seconds_left;
+				})
+			}
+
+			else {
+				chrome.storage.sync.get("end_time", function (obj) {
+					let end_time = obj["end_time"];
+				
+					const date = new Date();
+					let current_time = date.getTime();
+					
+					// Timer has ended
+					if (end_time <= current_time) {
+						console.log("TIMER OVER!!! YAY!!!");
+					}
+				
+					// Timer has not ended yet
+					else {
+						milliseconds_left = end_time - current_time;
+						minutes_left = (milliseconds_left/1000)/60;
+						console.log(minutes_left);
+						run_pomodoro(minutes_left)
+						console.log("TIMER NOT ENDED!! GET BACK TO WORK!");
+					}
+				});
+			}
+			
+		})
 	}
 });
 
-/*
-chrome.storage.sync.get("end_time", function (obj) {
-	chrome.storage.sync.get("end_time", function (obj) {
-	let end_time = obj["end_time"];
 
-	const date = new Date();
-	let current_time = date.getTime();
-	
-	// Timer has ended
-	if (end_time <= current_time) {
-		console.log("TIMER OVER!!! YAY!!!");
-	}
-
-	// Timer has not ended yet
-	else {
-		milliseconds_left = end_time - current_time;
-		minutes_left = (milliseconds_left/1000)/60;
-		console.log(minutes_left);
-		run_pomodoro(minutes_left)
-		console.log("TIMER NOT ENDED!! GET BACK TO WORK!");
-	}
-});
-
-*/
 
 function pomodoro() {
 	minute = document.getElementById("minute");
@@ -97,6 +186,10 @@ function pomodoro() {
 	document.getElementById("pomodoro_button").classList.add("pomodoro_button_selected");
 	document.getElementById("short_pomodoro_button").classList.remove("pomodoro_button_selected");
 	document.getElementById("long_pomodoro_button").classList.remove("pomodoro_button_selected");
+
+	chrome.storage.sync.set({"pomo_type": "pomodoro"}, function() {
+		console.log('Value is set to pomodoro');
+	});
 
 	// Resets end_time
 	chrome.storage.sync.set({"end_time": 0}, function() {
@@ -119,7 +212,7 @@ function short_break() {
 	document.getElementById("short_pomodoro_button").classList.add("pomodoro_button_selected");
 	document.getElementById("long_pomodoro_button").classList.remove("pomodoro_button_selected");
 	
-	chrome.storage.sync.set({"pomo_status": "short_break"}, function() {
+	chrome.storage.sync.set({"pomo_type": "short_break"}, function() {
 		console.log('Value is set to short_break');
 	});
 
@@ -144,7 +237,7 @@ function long_break() {
 	document.getElementById("short_pomodoro_button").classList.remove("pomodoro_button_selected");
 	document.getElementById("long_pomodoro_button").classList.add("pomodoro_button_selected");
 
-    chrome.storage.sync.set({"pomo_status": "long_break"}, function() {
+    chrome.storage.sync.set({"pomo_type": "long_break"}, function() {
 		console.log('Value is set to long break');
 	});
 
@@ -167,6 +260,10 @@ function run_pomodoro(mins) {
 
 	start_pomodoro_button.innerHTML = "Pause";
 
+	chrome.storage.sync.set({"pomo_status": "productivity"}, function() {
+		console.log('Value is set to productivity');
+	});
+
     // Calculates the end time
     end_time = start_time + (mins * 60000); // (60000 cause milliseconds)
 
@@ -183,12 +280,15 @@ function run_pomodoro(mins) {
 	console.log(minutes_left)
 
 
+	// NOT DONE CONTINUE ON THIS
+	pomodoro_status = document.getElementById("pomodoro_button").classList.contains("pomodoro_button_selected");
+	short_break_status = document.getElementById("pomodoro_button").classList.contains("pomodoro_button_selected");
 	pomodoro_status = document.getElementById("pomodoro_button").classList.contains("pomodoro_button_selected");
 
 
 	// If pomodoro has the selected class
 	if (pomodoro_status) {
-		chrome.storage.sync.set({"pomo_status": "productivity"}, function() {
+		chrome.storage.sync.set({"pomo_type": "productivity"}, function() {
 			console.log('Value is set to productivity');
 		});
 	}
@@ -297,18 +397,27 @@ function start_pomodoro() {
 	if (start_pomodoro_button.innerHTML == "Start") {
 		run_pomodoro(parseInt(minute)+(parseInt(second)/60));
 		start_pomodoro_button.innerHTML = "Pause";
+		chrome.storage.sync.set({"pomo_status": "productivity"}, function() {
+			console.log('Value is set to productivity');
+		});
 	}
 	
 	else if (start_pomodoro_button.innerHTML == "Resume") {
 		// alert(seconds);
 		run_pomodoro(seconds/60);
 		start_pomodoro_button.innerHTML = "Pause";
+		chrome.storage.sync.set({"pomo_status": "productivity"}, function() {
+			console.log('Value is set to productivity');
+		});
 	}
 
 	else {
 		start_pomodoro_button.innerHTML = "Resume";
 		chrome.storage.sync.set({"pomo_status": "paused"}, function() {
 			console.log('Timer paused at');
+			chrome.storage.sync.set({"pomo_status": "paused"}, function() {
+				console.log('Value is set to paused');
+			});
 		});
 
 		// get time left
