@@ -8,7 +8,7 @@
   },
 
   "permissions": [
-    "tabs", "storage", "scripting"
+    "tabs", "storage"
   ],
 
   "action": {
@@ -18,12 +18,12 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "css": ["blocksite.css"],
-      "js": ["blocksite.js"]
+      "css": ["css/blocksite.css"],
+      "js": ["js/blocksite.js"]
     }
   ],
   "web_accessible_resources": [{
-    "resources": ["blocksite.js"],
+    "resources": ["js/blocksite.js"],
     "matches": ["<all_urls>"]
   }],
   "icons": {

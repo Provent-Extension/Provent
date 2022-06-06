@@ -1,0 +1,190 @@
+* {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+}
+
+body {
+	margin: 0;
+}
+
+.tint {
+	position: fixed;
+	background: black;
+	opacity: 0.3;
+	z-index: -1;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+}
+
+.page_background {
+	position: fixed;
+	background: url("https://images.unsplash.com/photo-1553564932-e3d28a20a317?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1025&q=80");
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-position: center; /* Center the image */
+	height: 100%;
+	width: 100%;
+	z-index: -2;
+	top: 0px;
+}
+
+.youtube_container {
+	display: none; /*For now*/
+	position: absolute;
+	right: 0px;
+	top: 20%;
+}
+
+.youtube_button {
+	background: #FFFFFF;
+	width: 42px;
+	height: 46px;
+	border-radius: 20px 0px 0px 20px;
+	cursor: pointer;
+}
+
+.youtube_logo {
+	width: 30px;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+	position: absolute;
+	left: 0%;
+	transform: translate(50%, 0%);
+}
+
+.youtube_player_embed {
+	height: 200px;
+	width: 200px;
+	background: #333333;
+}
+
+.search_bar_container {
+	position: relative;
+	text-align: center;
+	margin-top: 20%;
+	/* margin-top: 40px; */
+}
+.search_bar {
+	background: Transparent;
+	color: white;
+	border: none;
+	border-bottom: 3px solid white;
+	width: 30%;
+	font-size: 1.5em;
+}
+
+.search_bar::placeholder {
+	color: white;
+	opacity: 1; /* Firefox */
+  }
+
+.search_bar:focus {
+    outline: none;
+}
+
+.search_button {
+	background: transparent;
+	border: none;
+	transition: 0.3s;
+}
+
+.search_button:hover {
+	transform: scale(1.2);
+
+}
+
+.fa-search {
+	color: white;
+	font-size: 1.5em;
+}
+
+.tasks_container {
+	margin-top: 20px;
+	border: white 2px solid;
+	border-radius: 30px;
+	min-height: 200px;
+	height: auto;
+	width: 20%;
+	float: right;
+	display: block;
+	position: relative;
+}
+
+
+.add_task_container {
+	position: relative;
+	text-align: left;
+	margin: 15px;
+}
+
+.add_task_text {
+	color: white;
+	font-size: 1em;
+}
+
+.task_bar {
+	background: Transparent;
+	color: white;
+	border: none;
+	border-bottom: 3px solid white;
+	width: 70%;
+	font-size: 1.5em;
+}
+
+.task_bar::placeholder {
+	color: white;
+	opacity: 1; /* Firefox */
+  }
+
+.task_bar:focus {
+    outline: none;
+}
+
+.fa-plus {
+	color: white;
+	font-size: 1.5em;	
+}
+
+.add_task_button {
+	color: white;
+	background: transparent;
+	border: none;
+	font-size: 2em;
+}
+
+.tasks_list {
+	list-style-type: none;
+	padding: 0%;
+	width: 95%;
+	display: block;
+	margin: 0 auto;
+}
+
+.a_task {
+	color: white;
+	font-weight: bold;
+}
+
+.cross_out {
+	color: rgb(204, 204, 204);
+	text-decoration: line-through;
+}
+
+.task_checkbox {
+	/* transform: scale(2); */
+	/* visibility: none; */
+	/* opacity: 0; */
+}
+
+.delete_task_button {
+	background: transparent;
+	color: white;
+	border: none;
+	font-weight: bold;
+	float: right;
+	right: 20px;
+	position: relative;
+}
