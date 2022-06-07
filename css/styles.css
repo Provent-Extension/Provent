@@ -62,24 +62,9 @@ body {
     text-decoration: none;
     position: relative;
 }
-
-.profile_picture_container {
-    height: 22px;
-    width: 22px;
-    border-radius: 50%;
-    background: rgb(179, 179, 179);
-    position: relative;
-    top: -2px;
-    border: black solid 1px;
-    overflow: hidden;
-}
-
-.profile_picture {
-    height: 35px;
-    width: auto;
-    position: relative;
-    top: -5px;
-    left: -7px;
+.navbar_icons {
+	color: white;
+	font-size: 20px;
 }
 
 .google_apps_icon {
@@ -148,7 +133,7 @@ body {
 	color: white;
 	border: none;
 	border-bottom: 3px solid white;
-	width: 30%;
+	width: 35%;
 	font-size: 1.5em;
 }
 
@@ -165,6 +150,7 @@ body {
 	background: transparent;
 	border: none;
 	transition: 0.3s;
+	cursor: pointer;
 }
 
 .search_button:hover {
@@ -178,7 +164,7 @@ body {
 }
 
 .tasks_container {
-	margin-top: 20px;
+	margin-top: 0px;
 	border: white 2px solid;
 	border-radius: 30px;
 	min-height: 200px;
@@ -264,3 +250,31 @@ body {
 	right: 20px;
 	position: relative;
 }
+
+/* Footer */
+
+.footer_container {
+	position: fixed;
+	width: 100%;
+	top: 92.5%;
+	display: block;
+	margin: 0 auto;
+}
+
+.credit {
+	color: white;
+	font-size: 1em;
+	left: 20px;
+	position: relative;
+}
+.settings_icon_link {
+	float: right;
+	right: 20px;
+	position: relative;
+	top: -35px;
+}
+.settings_icon {
+	color: white;
+	font-size: 20px;
+}
+/* Footer ^^^ */
