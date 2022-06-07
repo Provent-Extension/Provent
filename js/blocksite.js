@@ -12,14 +12,12 @@ function detect_pomo_status() {
             heading_text.classList.add("heading_text")
 
             block_site_box.appendChild(heading_text);
-
-
             document.body.appendChild(block_site_box);
     
         }
     
         else {
-
+            // alert("Break ended!")
             document.body.removeChild(block_site_box);
         }
     });
