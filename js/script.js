@@ -189,8 +189,20 @@ document.getElementById("add_task_button").addEventListener("click", add_task_bu
 function updateClock () {
 	let date = new Date();
 	// time
-	document.getElementById("hour").innerHTML = date.getHours();
-	document.getElementById("minutes").innerHTML = date.getMinutes();
+	if (date.getHours() >= 13) {
+		document.getElementById("hour").innerHTML = date.getHours() - 12;
+	}
+	else {
+		document.getElementById("hour").innerHTML = date.getHours();
+	}
+	
+	if (String(date.getMinutes()).length == 1) {
+		document.getElementById("minutes").innerHTML = "0" + date.getMinutes();
+	}
+	
+	else {
+		document.getElementById("minutes").innerHTML = date.getMinutes();
+	}
 
 	// date
 	let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
