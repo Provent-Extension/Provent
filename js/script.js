@@ -185,3 +185,21 @@ document.getElementById("task_input").addEventListener("keyup",
 document.getElementById("add_task_button").addEventListener("click", add_task_button);
 
 
+// Clock
+function updateClock () {
+	let date = new Date();
+	// time
+	document.getElementById("hour").innerHTML = date.getHours();
+	document.getElementById("minutes").innerHTML = date.getMinutes();
+
+	// date
+	let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+	let weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+	document.getElementById("weekday").innerHTML = weekdays[date.getDay()];
+	document.getElementById("month").innerHTML = months[date.getMonth()];
+	document.getElementById("day").innerHTML = date.getDate();
+	document.getElementById("year").innerHTML = date.getFullYear();
+}
+
+setInterval(updateClock, 1);
+// Time ^^^

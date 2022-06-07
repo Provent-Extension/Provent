@@ -61,10 +61,25 @@ body {
 	background: #333333;
 }
 
+/* Clock */
+.clock {
+	font-size: 10em;
+	color: white;
+	text-align: center;
+	margin-bottom: -10px;
+
+}
+.date {
+	font-size: 1em;
+	color: white;
+	text-align: center;
+}
+/* Clock ^^^ */
+
 .search_bar_container {
 	position: relative;
 	text-align: center;
-	margin-top: 20%;
+	/* margin-top: 20%; */
 	/* margin-top: 40px; */
 }
 .search_bar {
