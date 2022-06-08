@@ -115,6 +115,12 @@ body {
 	margin-bottom: -10px;
 	/* margin-top: -20px; */
 }
+.meridiem {
+	font-size: 0.5em;
+	position: absolute;
+	margin-top: 55px;
+	margin-left: 10px;
+}
 .date {
 	font-size: 1em;
 	color: white;

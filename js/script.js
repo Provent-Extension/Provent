@@ -191,9 +191,11 @@ function updateClock () {
 	// time
 	if (date.getHours() >= 13) {
 		document.getElementById("hour").innerHTML = date.getHours() - 12;
+		document.getElementById("meridiem").innerHTML = "PM"
 	}
 	else {
 		document.getElementById("hour").innerHTML = date.getHours();
+		document.getElementById("meridiem").innerHTML = "AM"
 	}
 	
 	if (String(date.getMinutes()).length == 1) {
