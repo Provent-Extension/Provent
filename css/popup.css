@@ -5,10 +5,33 @@
 }
 
 body {
-    background: #333;
+    background: #F8FFFE;
 	margin: 0;
     width: 400px;
     height: 400px;
+}
+
+.popup_nav {
+	background: #FFFFFF;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	height: 50px;
+}
+.nav_icon {
+	width: 30px;
+	height: auto;
+	display: inline;
+	position: relative;
+	top: 10px;
+	/* left: 10px; */
+	margin-left: 10px;
+}
+.nav_title {	
+	font-family: 'Inter', sans-serif;
+	font-weight: bold;
+	color: #0D625D;
+	font-size: 1.2em;
+	display: inline;
+	line-height: 50px;
 }
 
 
@@ -20,45 +43,50 @@ body {
 
 
 .pomodoro_type_button {
-	border: 2px solid #FFFFFF;
-	box-sizing: border-box;
-	border-radius: 20px;
+	border: 2px solid #88DBD4;
+	border-radius: 15px;
 	color: white;
-	width: 120px;
-	height: 40px;
-	background: transparent;
+	padding: 5px 20px;
+	margin: 0 5px;
+	margin-top: 15px;
+	background: #88DBD4;
 	transition: 0.3s;
 	cursor: pointer;
 }
 
 .pomodoro_type_button:hover {
-	background: #88C3FA;
+	background: transparent;
+	color: #424244;
 }
 
 .pomodoro_button_selected {
-	background: #88C3FA;
+	background: transparent;
+	color: #424244;
 }
 
 .pomodoro_start_button {
-	border: 2px solid #FFFFFF;
-	box-sizing: border-box;
-	border-radius: 20px;
+	border-radius: 15px;
+	border: 2px solid #0D625D;
 	color: white;
 	width: 150px;
 	height: 40px;
-	background: transparent;	
+	background: #0D625D;	
+	font-weight: bold;
+	text-transform: uppercase;
 	font-size: 1.5em;
 	transition: 0.3s;
 	cursor: pointer;
 }
 
 .pomodoro_start_button:hover {
-	background: #88C3FA;
+	background: transparent;
+	color: #424244;
 }
 
 .timer {
-	color: white;
-	font-size: 8em;
+	color: #424244;
+	font-size: 7em;
 	padding: 0px;
 	margin: 0px;
+	font-family: 'Roboto', sans-serif;
 }
