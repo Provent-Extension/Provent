@@ -16,7 +16,6 @@
 	</head>
 	
 	<body>
-	
 		<div class="page_background"><div class="tint"></div></div>
 		
 		<nav>
@@ -35,13 +34,36 @@
 		
 		  </nav>
 		
-		<div class="youtube_container">
-			<div class="youtube_button" id="youtube_button">
-				<img class="youtube_logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/2560px-YouTube_full-color_icon_%282017%29.svg.png"/>
-			</div>
+		<div class="widget_slider_container">
+			<div class="widget_container">
+				<div class="widget_apps">
+					<ul class="widget_icons_container">
+						<li class="widget_icon_li" id="widget_icon" data="tasks"><i class="widget_icon fas fa-tasks"></i></li>
+						<li class="widget_icon_li" id="widget_icon" data=""><i class="widget_icon fa-solid fa-calendar"></i></li>
+						<li class="widget_icon_li" id="widget_icon" data=""><i class="widget_icon fa-solid fa-calendar"></i></li>
+						<li class="widget_icon_li" id="widget_icon" data="youtube"><i class="widget_icon fa-brands fa-youtube"></i></li>
+						<li class="widget_icon_li" id="widget_icon" data="calendar"><i class="widget_icon fa-solid fa-calendar"></i></li>
+					</ul>
+				</div>
 
-			<div class="youtube_player_embed">
-					
+				<div class="widget_app_display">
+				<!-- Widget app -->
+
+					<!-- To do list -->
+					<div class="tasks_container" id="widget_app_container" data="tasks">
+						<div class="add_task_container">
+							<input class="task_bar" id="task_input" placeholder="Add task...">
+							<button type="submit" class="add_task_button" id="add_task_button">+</button>	
+						</div>
+
+						<ul class="tasks_list" id="tasks_list">
+							
+						</ul>
+					</div>
+					<!-- To do list ^^^ -->
+
+				<!-- Widget apps ^^^ -->
+				</div>
 			</div>
 		</div>
 
@@ -59,16 +81,7 @@
 		</div>
 		
 
-		<!-- <div class="tasks_container">
-			<div class="add_task_container">
-				<input class="task_bar" id="task_input" placeholder="Add task...">
-				<button type="submit" class="add_task_button" id="add_task_button">+</button>	
-			</div>
 
-			<ul class="tasks_list" id="tasks_list">
-				
-			</ul>
-		</div> -->
 			
 		
 		<footer>

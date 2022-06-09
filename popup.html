@@ -20,7 +20,7 @@
 
 		<div class="pomodoro_timer">
 			
-			<h1 class="timer"><span id="minute">25</span>:<span id="second">00</span></h1>
+			<h1 class="timer"><span id="minute">--</span>:<span id="second">--</span></h1>
 			
 			<button class="pomodoro_start_button" id="start_pomodoro_button">Start</button>
 			
@@ -32,18 +32,29 @@
 			
 		</div>
 
+		<div class="widget_container">
+			<i class="widget_icon fa-solid fa-calendar"></i>
+			<i class="widget_icon fas fa-tasks"></i>
+		</div>
+
 		<div class="tasks_container">
 			<div class="add_task_container">
 				<input class="task_bar" id="task_input" placeholder="Add task...">
-				<button type="submit" class="add_task_button" id="add_task_button">+</button>	
+				<button type="submit" class="add_task_button" id="add_task_button"><i class="add_task_icon fa-solid fa-plus"></i></button>	
 			</div>
 
 			<ul class="tasks_list" id="tasks_list">
 				
 			</ul>
 		</div>
+
+		<footer class="popup_footer">
+			<p class="footer_text">Need help?</br><a class="footer_contact" href="mailto:helloprovent@gmail.com">Contact us</a> for tips and feedback.</p>
+		</footer>
 	
 	</body>
+
 	<script src="js/popup.js"></script>
 	<script src="js/todolist.js"></script>
+	<script src="js/fontawesome.js"></script>
 </html>

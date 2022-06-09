@@ -1,17 +1,13 @@
-function slide_youtube() {
-	alert("ok");
-	
-}
-
-// YouTube onclick
-document.getElementById("youtube_button").addEventListener("click", slide_youtube);
-
 // Clock
 function updateClock () {
 	let date = new Date();
 	// time
 	if (date.getHours() >= 13) {
 		document.getElementById("hour").innerHTML = date.getHours() - 12;
+		document.getElementById("meridiem").innerHTML = "PM"
+	}
+	else if (date.getHours() == 12) {
+		document.getElementById("hour").innerHTML = date.getHours();
 		document.getElementById("meridiem").innerHTML = "PM"
 	}
 	else {
@@ -38,3 +34,34 @@ function updateClock () {
 
 setInterval(updateClock, 1);
 // Time ^^^
+
+
+
+// Onclick icon, get icon's data value
+var widget_icons = document.querySelectorAll('[id^=widget_icon]');
+var widget_app_containers = document.querySelectorAll('[id^=widget_app_container]');
+
+for (let i=0; i <= widget_icons.length; i++) {
+	widget_icons[i].addEventListener("click", function() {
+		// alert(widget_icons[i].getAttribute("data"));
+	
+		// For every widget app with data X
+
+		for (let i=0; i <= widget_app_containers.length; i++) {
+			// alert(widget_app_containers[i].getAttribute("data"))
+			if (widget_app_containers[i].getAttribute("data") == widget_icons[i].getAttribute("data")) {
+				// Display block
+				widget_app_containers[i].style.display = "block";
+			}
+
+			else {
+				widget_app_containers[i].style.display = "none";
+			}
+		}
+
+
+	});
+}
+
+
+
