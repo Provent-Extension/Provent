@@ -1,3 +1,7 @@
+body {
+    overflow: hidden !important; /* Hide scrollbars */
+}
+
 .block_container {
     position: fixed;
     height: 100vh;
@@ -5,6 +9,8 @@
     background: #FFFFFF;
     top: 0;
     z-index: 9999 !important;
+    overflow: hidden;
+    left: 0;
 }
 
 .heading_text {
@@ -12,3 +18,113 @@
     font-size: 3em;
     top: 10%;
 }
+
+
+
+.hero {
+    background: linear-gradient(149.14deg, #D8FBF9 -5.45%, #ECF5F5 81.68%);
+    border-bottom-right-radius: 300px;
+    position: relative;
+    top: 0px;
+    min-height: 80vh;
+    padding: 0px 10%;
+    height: auto;
+}
+
+.hero:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.hero_column {
+    /* width: 50%; */
+    float: left;
+    position: relative;
+    height: auto;
+	margin: 5% 0px;
+}
+
+.hero_left {
+    width: 40%;
+}
+.hero_right {
+    width: 60%;
+}
+
+
+.provent_timer {
+    margin-top: 40px;
+    width: auto;
+    height: 350px;
+    position: relative;
+    right: 80px;
+    float: right;
+    /* animation: clock_bounce 2s infinite alternate; */
+    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+}
+
+@keyframes clock_bounce {
+    from {top: -20px;}
+    to {top: 20px;}
+}
+
+.blocker_message {
+    color: #0D625D;
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5em;
+    width: 90%;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    top: 20px;
+}
+
+.timer {
+    color: #424244;
+    font-family: 'Roboto', sans-serif;
+    font-size: 8em;
+    font-weight: normal;
+    text-align: center;
+
+}
+
+.blocksitegraphic {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    bottom: 0px;
+    background-image: URL(../images/blocksitegraphic.svg);
+}
+
+    
+/* Footer */
+
+.footer_container {
+	position: fixed;
+	width: 100%;
+	top: 92.5%;
+	display: block;
+	margin: 0 auto;
+}
+
+.credit {
+	position: relative;
+    bottom: 0;
+    color: #0D625D;
+    font-family: 'Inter', sans-serif;
+    left: 20px;
+
+}
+.settings_icon_link {
+	float: right;
+	position: relative;
+}
+.settings_icon {
+	color: white;
+	font-size: 20px;
+    filter: drop-shadow(1px 1px 1px rgb(0 0 0 / 0.4));
+}
+/* Footer ^^^ */

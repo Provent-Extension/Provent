@@ -10,6 +10,10 @@ function updateClock () {
 		document.getElementById("hour").innerHTML = date.getHours();
 		document.getElementById("meridiem").innerHTML = "PM"
 	}
+	else if (date.getHours() == 0) {
+		document.getElementById("hour").innerHTML = 12;
+		document.getElementById("meridiem").innerHTML = "AM"
+	}
 	else {
 		document.getElementById("hour").innerHTML = date.getHours();
 		document.getElementById("meridiem").innerHTML = "AM"
