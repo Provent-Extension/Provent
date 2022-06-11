@@ -32,7 +32,22 @@ function updateClock () {
 	let weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 	document.getElementById("weekday").innerHTML = weekdays[date.getDay()];
 	document.getElementById("month").innerHTML = months[date.getMonth()];
-	document.getElementById("day").innerHTML = date.getDate();
+    
+	// Gets the ordinal suffix of the number
+    if (date.getDate() % 10 == 1 && date.getDate() % 100 != 11) {
+        var ordinal_suffix = "st"
+    }
+    else if (date.getDate() % 10 == 2 && date.getDate() % 100 != 12) {
+        var ordinal_suffix = "nd"
+    }
+    else if (date.getDate() % 10 == 3 && date.getDate() % 100 != 13) {
+        var ordinal_suffix = "rd"
+    }
+	else {
+		var ordinal_suffix = "th"
+	}
+
+	document.getElementById("day").innerHTML = date.getDate() + ordinal_suffix;
 	document.getElementById("year").innerHTML = date.getFullYear();
 }
 
