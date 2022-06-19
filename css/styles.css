@@ -136,7 +136,14 @@ body {
 	text-align: center;
 	background: white;
 	border-radius: 50%;
+	transition: 0.3s;
 }
+
+.widget_icon:hover {
+	color: white;
+	background: #0D625D;
+}
+
 
 .widget_app_display {
 	float: right;
@@ -155,6 +162,8 @@ body {
 	text-align: center;
 	margin-bottom: -10px;
 	/* margin-top: -20px; */
+	position: relative;
+	margin-top: 10%;
 }
 .meridiem {
 	font-size: 0.5em;
