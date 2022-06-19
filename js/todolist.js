@@ -65,7 +65,7 @@ function load_tasks() {
 
 		// Add a X beside the task
 		const delete_button = document.createElement('button');
-		delete_button.innerHTML = "X";
+		delete_button.innerHTML = '<i class="delete_task_button fa-solid fa-xmark"></i>';
 		delete_button.classList.add("delete_task_button")
 		task_container.appendChild(delete_button);
 
@@ -149,7 +149,7 @@ function add_task_button() {
 
 	// Add a X beside the task
 	const delete_button = document.createElement('button');
-	delete_button.innerHTML = "X";
+	delete_button.innerHTML = '<i class="delete_task_button fa-solid fa-xmark"></i>';
 	delete_button.classList.add("delete_task_button")
 	task_container.appendChild(delete_button);
 

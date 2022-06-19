@@ -1,7 +1,6 @@
 * {
 	font-family: Roboto;
 	font-style: normal;
-	font-weight: normal;
 }
 
 body {
@@ -15,6 +14,10 @@ body {
 	background: #FFFFFF;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	height: 50px;
+	width: 100%;
+	top: 0;
+	position: fixed;
+	z-index: 999;
 }
 .nav_icon {
 	width: 30px;
@@ -38,13 +41,13 @@ body {
 .pomodoro_timer {
 	position: relative;
 	text-align: center;
-	margin-top: 5%;
+	margin-top: 15%;
 }
 
 
 .pomodoro_type_button {
 	border: 2px solid #88DBD4;
-	border-radius: 15px;
+	border-radius: 20px;
 	color: white;
 	padding: 5px 20px;
 	margin: 0 5px;
@@ -65,7 +68,7 @@ body {
 }
 
 .pomodoro_start_button {
-	border-radius: 15px;
+	border-radius: 20px;
 	border: 2px solid #0D625D;
 	color: white;
 	width: 150px;
@@ -89,4 +92,139 @@ body {
 	padding: 0px;
 	margin: 0px;
 	font-family: 'Roboto', sans-serif;
+}
+
+.widget_container {
+	background: #424244;
+	width: 50%;
+	margin: 10px auto;
+	border-radius: 20px;
+	padding: 10px;
+	text-align: center;
+}
+
+.widget_icon {
+	color: white;
+	background: #0D625D;
+	font-size: 1.2em;
+	border-radius: 50%;
+	padding: 10px;
+	margin: 0 5px;
+}
+
+
+/* Task */
+
+.tasks_container {
+	margin-top: 0px;
+	border-radius: 30px;
+	min-height: 200px;
+	height: auto;
+	width: 90%;
+	display: block;
+	margin: 0 auto;
+	position: relative;
+}
+
+
+.add_task_container {
+	position: relative;
+	text-align: left;
+	margin: 15px;
+}
+
+.add_task_text {
+	color: #0D625D;
+	font-size: 1em;
+}
+.add_task_icon {
+	font-size: 16px;
+	font-weight: bold;
+	color: #0D625D;
+	cursor: pointer;
+}
+.task_bar {
+	background: Transparent;
+	color: #0D625D;
+	border: none;
+	border-bottom: 3px solid #0D625D;
+	width: 80%;
+	position: relative;
+	left: 5%;
+	font-size: 1.2em;
+}
+
+.task_bar::placeholder {
+	color: #0D625D;
+	opacity: 1; /* Firefox */
+  }
+
+.task_bar:focus {
+    outline: none;
+}
+
+.add_task_button {
+	color: #0D625D;
+	background: transparent;
+	border: none;
+	font-size: 2em;
+	position: relative;
+	left: 5%;
+}
+
+.tasks_list {
+	list-style-type: none;
+	padding: 0%;
+	width: 95%;
+	display: block;
+	margin: 0 auto;
+	position: relative;
+	left: 5%;
+}
+
+.a_task {
+	color: #0D625D;
+	font-weight: bold;
+}
+
+.cross_out {
+	color: rgb(204, 204, 204);
+	text-decoration: line-through;
+}
+
+.task_checkbox {
+	/* transform: scale(2); */
+	/* visibility: none; */
+	/* opacity: 0; */
+}
+
+.delete_task_button {
+	background: transparent;
+	color: #0D625D;
+	border: none;
+	font-weight: bold;
+	float: right;
+	right: 20px;
+	position: relative;
+	cursor: pointer;
+}
+/* Task ^^^ */
+
+.popup_footer {
+	display: block;
+	position: relative;
+	width: 100%;
+}
+
+.footer_text {
+	color: #0D625D;
+	position: relative;
+	left: 15px;
+	padding-bottom: 15px;
+}
+
+.footer_contact {
+	color: #0D625D;
+	text-decoration: none;
+	font-weight: bold;
 }

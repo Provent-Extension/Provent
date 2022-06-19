@@ -21,6 +21,7 @@ body {
 .page_background {
 	position: fixed;
 	background: url("https://images.unsplash.com/photo-1553564932-e3d28a20a317?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1025&q=80");
+	background: url("https://images.unsplash.com/photo-1529963183134-61a90db47eaf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80");
 	background-repeat: no-repeat;
 	background-size: 100% auto;
 	background-position: center; /* Center the image */
@@ -76,36 +77,83 @@ body {
 }
 /* Navbar ^^^ */
 
-.youtube_container {
-	display: none; /*For now*/
+/* Widget Slider */
+
+
+/* NEED TO ADD A NEW CONTAINER, BECAUSE OVERFLOW-X TO BODY MIGHT BREAK OTHER SITES */
+.widget_slider_container {
+	/* display: none; For now */
 	position: absolute;
 	right: 0px;
 	top: 20%;
-}
-
-.youtube_button {
-	background: #FFFFFF;
-	width: 42px;
-	height: 46px;
-	border-radius: 20px 0px 0px 20px;
+	/* background: red; */
+	height: 280px;
+	width: 300px;
+	overflow-x: hidden;
+	padding: 0;
+	margin: 0;
 	cursor: pointer;
+	z-index: 2;
 }
 
-.youtube_logo {
-	width: 30px;
-	height: auto;
-	display: block;
-	margin: 0 auto;
+.widget_container {
+	top: 0;
 	position: absolute;
-	left: 0%;
-	transform: translate(50%, 0%);
+	right: -240px;
+	border-radius: 20px 0px 0px 20px;
+	background: #424244;
+	height: 100%;
+	width: 300px;
+	transition: 0.3s;
 }
 
-.youtube_player_embed {
-	height: 200px;
-	width: 200px;
-	background: #333333;
+.widget_slider_container:hover .widget_container {
+	right: 0px;
 }
+
+.widget_apps {
+	top: 10%;
+	position: relative;
+	float: left;
+	width: auto;
+	/* background: red; */
+	/* background: blue; */
+}
+
+.widget_icons_container {
+	list-style-type: none;
+	padding:0;
+	margin: 10px;
+}
+
+.widget_icon {
+	color: #424244;
+	font-size: 1em;
+	margin: 5px;
+	padding: 10px;
+	width: 1em;
+	height: auto;
+	text-align: center;
+	background: white;
+	border-radius: 50%;
+	transition: 0.3s;
+}
+
+.widget_icon:hover {
+	color: white;
+	background: #0D625D;
+}
+
+
+.widget_app_display {
+	float: right;
+	width: 78%;
+	top: 7.5%;
+	position: relative;
+	/* background: red; */
+}
+
+/* Widget Slider ^^^ */
 
 /* Clock */
 .clock {
@@ -114,6 +162,8 @@ body {
 	text-align: center;
 	margin-bottom: -10px;
 	/* margin-top: -20px; */
+	position: relative;
+	margin-top: 10%;
 }
 .meridiem {
 	font-size: 0.5em;
@@ -169,16 +219,18 @@ body {
 	font-size: 1.5em;
 }
 
+/* To do list widget */
+
 .tasks_container {
 	margin-top: 0px;
-	border: white 2px solid;
 	border-radius: 30px;
 	min-height: 200px;
 	height: auto;
-	width: 20%;
-	float: right;
+	width: 90%;
 	display: block;
+	margin: 0 auto;
 	position: relative;
+	background: #FFFFFF;
 }
 
 
@@ -189,21 +241,28 @@ body {
 }
 
 .add_task_text {
-	color: white;
+	color: #0D625D;
 	font-size: 1em;
 }
-
+.add_task_icon {
+	font-size: 16px;
+	font-weight: bold;
+	color: #0D625D;
+	cursor: pointer;
+}
 .task_bar {
 	background: Transparent;
-	color: white;
+	color: #0D625D;
 	border: none;
-	border-bottom: 3px solid white;
-	width: 70%;
-	font-size: 1.5em;
+	border-bottom: 3px solid #0D625D;
+	width: 80%;
+	position: relative;
+	left: 5%;
+	font-size: 1.2em;
 }
 
 .task_bar::placeholder {
-	color: white;
+	color: #0D625D;
 	opacity: 1; /* Firefox */
   }
 
@@ -211,16 +270,13 @@ body {
     outline: none;
 }
 
-.fa-plus {
-	color: white;
-	font-size: 1.5em;	
-}
-
 .add_task_button {
-	color: white;
+	color: #0D625D;
 	background: transparent;
 	border: none;
 	font-size: 2em;
+	position: relative;
+	left: 5%;
 }
 
 .tasks_list {
@@ -229,10 +285,12 @@ body {
 	width: 95%;
 	display: block;
 	margin: 0 auto;
+	position: relative;
+	left: 5%;
 }
 
 .a_task {
-	color: white;
+	color: #424244;
 	font-weight: bold;
 }
 
@@ -249,13 +307,16 @@ body {
 
 .delete_task_button {
 	background: transparent;
-	color: white;
+	color: #0D625D;
 	border: none;
 	font-weight: bold;
 	float: right;
-	right: 20px;
-	position: relative;
+	right: 10px;
+	position: absolute;
+	cursor: pointer;
 }
+
+/* To do list widget ^^^ */
 
 /* Footer */
 

@@ -1,3 +1,10 @@
+if (document.getElementById("pomodoro_button").classList.contains("pomodoro_button_selected")) {
+	minute = document.getElementById("minute");
+	second = document.getElementById("second");
+	
+	minute.innerHTML = "25";
+	second.innerHTML = "00";	
+}
 chrome.storage.sync.get("pomo_type", function (obj) {
 	let pomo_type = obj["pomo_type"]
 
