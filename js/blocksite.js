@@ -10,7 +10,7 @@ function detect_pomo_status() {
             block_site_box = document.createElement("div");
 			block_site_box.setAttribute("id", "block_site_box")
             block_site_box.classList.add("block_container");
-            block_site_box.innerHTML = '<!DOCTYPE html> <html> <head> <link rel="stylesheet" href="css/blocksite.css"> </head> <!-- Copy and paste everything in the body to blocksite.js --> <body> <div class="block_container"> <div class="hero_column hero_left"> <img class="provent_timer" src="https://raw.githubusercontent.com/Provent-Extension/External-Assets/fd7613110f9dd394c5a05d8e30098b38cbe6f4fd/images/timerimage.svg" alt="Provent Timer"> </div> <div class="hero_column hero_right"> <p class="blocker_message">Hey! It’s not time for your break yet, you’re almost there!</p> <h1 class="timer"><span id="minute">24</span>:<span id="second">12</span></h1> </div> <img class="blocksitegraphic" src="https://raw.githubusercontent.com/Provent-Extension/External-Assets/fd7613110f9dd394c5a05d8e30098b38cbe6f4fd/images/blocksitegraphic.svg"> <footer> <div class="footer_container"> <p class="credit">Made by <strong>Provent</strong></p> <a href="settings.html" class="settings_icon_link" target="_blank"><i class="settings_icon fas fa-gear"></i></a> </div> <!-- Adds fontawesome --> <script src="js/fontawesome.js"></script> </footer> </div> </body> </html>';
+            block_site_box.innerHTML = '<!DOCTYPE html> <html> <head> <link rel="stylesheet" href="css/blocksite.css"> </head> <!-- Copy and paste everything in the body to blocksite.js --> <body> <div class="block_container"> <div class="hero_column hero_left"> <img class="provent_timer" src="https://raw.githubusercontent.com/Provent-Extension/External-Assets/fd7613110f9dd394c5a05d8e30098b38cbe6f4fd/images/timerimage.svg" alt="Provent Timer"> </div> <div class="hero_column hero_right"> <p class="blocker_message">Hey! It’s not time for your break yet, you’re almost there!</p> <h1 class="timer"><span id="minute">--</span>:<span id="second">--</span></h1> </div> <img class="blocksitegraphic" src="https://raw.githubusercontent.com/Provent-Extension/External-Assets/fd7613110f9dd394c5a05d8e30098b38cbe6f4fd/images/blocksitegraphic.svg"> <footer> <div class="footer_container"> <p class="credit">Made by <strong>Provent</strong></p> <a href="settings.html" class="settings_icon_link" target="_blank"><i class="settings_icon fas fa-gear"></i></a> </div> <!-- Adds fontawesome --> <script src="js/fontawesome.js"></script> </footer> </div> </body> </html>';
             // document.getElementById("blocksitegraphic").src = chrome.extension.getURL("../images/timerimage.svg");
             
             // If the blocker doesn't exist yet, add it
@@ -59,6 +59,7 @@ chrome.storage.sync.get("end_time", function (obj) {
 		if (end_time <= current_time) {
 			console.log("TIMER OVER!!! YAY!!!");
 			// REMOVE WEBSITE BLOCKER
+            document.location.reload()
 		}
 				
 		// Timer has not ended yet
