@@ -23,6 +23,7 @@ function detect_pomo_status() {
     
         else {
 			if (document.getElementById("block_site_box")) {
+                console.log("A IS RUNNING")
 				document.location.reload()
             }
         }
