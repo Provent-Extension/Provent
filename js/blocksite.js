@@ -2,6 +2,7 @@
 function detect_pomo_status() {
     chrome.storage.sync.get("pomo_status", function (obj) {
         let status = obj["pomo_status"];
+		console.log(status);
 		
 		
         if (status === "productivity") {   
@@ -23,8 +24,9 @@ function detect_pomo_status() {
     
         else {
 			if (document.getElementById("block_site_box")) {
-                console.log("A IS RUNNING")
-				document.location.reload()
+				if (document.getElementById("block_site_box")) {
+					document.location.reload()
+				}
             }
         }
     });
@@ -49,8 +51,8 @@ chrome.storage.sync.get("blocked_sites", function(obj) {
 
 // Get time left
 
-   interval = setInterval(function() {
-chrome.storage.sync.get("end_time", function (obj) {
+interval = setInterval(function() {
+	chrome.storage.sync.get("end_time", function (obj) {
 		let end_time = obj["end_time"];
 				
 		const date = new Date();
@@ -58,9 +60,15 @@ chrome.storage.sync.get("end_time", function (obj) {
 					
 		// Timer has ended
 		if (end_time <= current_time) {
-			console.log("TIMER OVER!!! YAY!!!");
 			// REMOVE WEBSITE BLOCKER
-            document.location.reload()
+			if (document.getElementById("block_site_box")) {
+
+				chrome.storage.sync.set({"pomo_status": "break"}, function() {
+					console.log('Value is set to break');
+				});
+				// document.body.removeChild(block_site_box);
+				document.location.reload()
+			}
 		}
 				
 		// Timer has not ended yet
@@ -90,7 +98,7 @@ chrome.storage.sync.get("end_time", function (obj) {
 		}
 		
 	});
-   },1000)
+},1000)
 
 
 // If current URL is in that list, turn on the detect_pomo_status interval
