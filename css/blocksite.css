@@ -104,7 +104,8 @@
     color: #0D625D;
     font-family: 'Inter', sans-serif !important;
     left: 20px;
-
+    font-size: 1em;
+    margin-top: 20px;
 }
 .settings_icon_link {
 	float: right;
