@@ -112,7 +112,10 @@ body {
 	margin: 0 5px;
 }
 
-
+.widget_icon_selected {
+	color: #000000;
+	background: white;
+}
 /* Task */
 
 .tasks_container {
