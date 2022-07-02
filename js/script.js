@@ -1,55 +1,27 @@
 
 
 // Unsplash
+function update_background() {
+	const imageWidth = screen.width;   // Image width in pixels
+	const imageHeight = screen.height;   // Image height in pixel
+	const collections = [8936093, 10938601, 47285497]
+	
+	let image_index = 10;
+	
+	const collectionID = collections[Math.floor(Math.random()*collections.length)]
 
-// const numImagesAvailable = 2  //how many photos are total in the collection
-const numItemsToGenerate = 1000; // How many photos you want to display
-const imageWidth = screen.width;   // Image width in pixels
-const imageHeight = screen.height;   // Image height in pixels
-const collectionID = 10938601  // Collection ID
+	const background = document.getElementById('unsplash_bg')
+	
+	fetch(`https://source.unsplash.com/collection/${collectionID}/${imageWidth}x${imageHeight}/?sig=${image_index}`)
+	.then((response) => {
+		if ((response.url).includes("source-404")) {
+			update_background()
+		}
+		else {background.src = response.url;}
+	})
+}
 
-const background = document.querySelector('.page_background')
-let image_index = 1;
-fetch(`https://source.unsplash.com/collection/${collectionID}/${imageWidth}x${imageHeight}/?sig=${image_index}`)
-		.then((response) => {
-			background.src = response.url;
-		})
-
-let date = new Date().getDate();
-
-chrome.storage.sync.get("previous_date", function (obj) {
-	let previous_date = obj["previous_date"]
-
-	// If it's been more then a day, then create a new list
-	if (date != previous_date) {
-		let background_lists = [];
-		let image_index = 1;
-		fetch(`https://source.unsplash.com/collection/${collectionID}/${imageWidth}x${imageHeight}/?sig=${image_index}`)
-		.then((response) => {
-			// alert(response.url)
-			// background.src = response.url;
-			for (let i=0; i<numItemsToGenerate; i++) {
-				background_lists.push(response.url);
-			}
-			chrome.storage.sync.set({"backgrounds": background_lists}, function() {
-				console.log('Collected new backgrounds');
-			});	
-			chrome.storage.sync.set({"previous_date": date}, function() {
-				console.log('Changed the previous date');
-			});	
-		})
-		// Unsplash ^^^
-	}
-});
-
-chrome.storage.sync.get("backgrounds", function (obj) {
-	let background_lists = obj["backgrounds"]
-	background.src = background_lists[Math.floor(Math.random() * background_lists.length)];
-});
-
-// let image_index = Math.floor(Math.random() * numImagesAvailable);
-
-
+update_background()
 
 // Clock
 function updateClock () {

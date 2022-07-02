@@ -16,6 +16,22 @@ body {
 	height: 100%;
 	width: 100%;
 	top: 0px;
+	animation: tint 2s;
+}
+
+@keyframes tint {
+	0% {
+		opacity: 1;
+		background: #f8fffe;
+	}
+	70% {
+		opacity: 1;
+		/* background: black; */
+		background: #f8fffe;
+	}
+	100% {
+		opacity: 0.3;
+	}
 }
 
 .page_background {
