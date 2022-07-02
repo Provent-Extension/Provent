@@ -14,6 +14,7 @@ function update_background() {
 	
 	fetch(`https://source.unsplash.com/collection/${collectionID}/${imageWidth}x${imageHeight}/?sig=${image_index}`)
 	.then((response) => {
+		// If the photo can't be found, look for a new one
 		if ((response.url).includes("source-404")) {
 			update_background()
 		}

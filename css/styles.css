@@ -16,7 +16,7 @@ body {
 	height: 100%;
 	width: 100%;
 	top: 0px;
-	animation: tint 2s;
+	animation: tint 1.5s;
 }
 
 @keyframes tint {
