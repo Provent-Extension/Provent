@@ -127,6 +127,7 @@ body {
 	display: block;
 	margin: 0 auto;
 	position: relative;
+	display: none;
 }
 
 
@@ -212,6 +213,40 @@ body {
 	cursor: pointer;
 }
 /* Task ^^^ */
+
+
+.calendar_container {
+	margin-top: 0px;
+	border-radius: 30px;
+	/* min-height: 200px; */
+	height: 220px;
+	width: 90%;
+	display: block;
+	margin: 0 auto;
+	position: relative;
+	display: none;
+	padding: 5px;
+	overflow: hidden;
+}
+.calendar {
+	width: 100% !important;
+	border: none !important;
+	border-radius: 10px;
+}
+
+.bookmark_container {
+	background: green;
+	margin-top: 0px;
+	border-radius: 30px;
+	min-height: 200px;
+	height: auto;
+	width: 90%;
+	display: block;
+	margin: 0 auto;
+	position: relative;
+	display: none;
+}
+
 
 .popup_footer {
 	display: block;
