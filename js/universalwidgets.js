@@ -175,3 +175,112 @@ document.getElementById("task_input").addEventListener("keyup",
 
 // Add task button onclick
 document.getElementById("add_task_button").addEventListener("click", add_task_button);
+
+
+
+// Onclick icon, get icon's data value
+var widget_icons = document.querySelectorAll('[id^=widget_icon]');
+var widget_app_containers = document.querySelectorAll('[id^=widget_app_container]');
+
+for (let i=0; i <= widget_icons.length; i++) {
+	// If the widget icon exists
+	if (widget_icons[i]) {
+		widget_icons[i].addEventListener("click", function() {
+			// alert(widget_icons[i].getAttribute("data"));
+			chrome.storage.sync.set({"last_widget": widget_icons[i].getAttribute("data")}, function() {
+				console.log("Saved previous widget")
+			})
+
+			// For every widget app with data X
+			for (let k=0; k <= widget_app_containers.length; k++) {
+				// alert(widget_app_containers[i].getAttribute("data"))
+
+				if (widget_app_containers[k]) {
+					if (widget_app_containers[k].getAttribute("data") === widget_icons[i].getAttribute("data")) {
+						// alert(widget_app_containers[k].getAttribute("data") + " " + widget_icons[i].getAttribute("data"))
+						// Display block
+
+						for (let j=0; j <= widget_icons.length; j++) {
+							if (widget_icons[j]) {
+								widget_icons[j].classList.remove("widget_icon_selected");
+							}
+						}
+
+						widget_icons[i].classList.add("widget_icon_selected");
+						
+						widget_app_containers[k].style.display = "block";
+					}
+		
+					else {
+						
+						widget_app_containers[k].style.display = "none";
+					}
+				}
+			}
+		});
+	}
+}
+
+chrome.storage.sync.get("last_widget", function(obj) {
+	let last_widget = obj["last_widget"]
+	// If a previous widget exists, open it
+	if (last_widget) {
+		// For every widget app with data X
+		for (let k=0; k <= widget_app_containers.length; k++) {
+			// alert(widget_app_containers[i].getAttribute("data"))
+
+			if (widget_app_containers[k]) {
+				if (widget_app_containers[k].getAttribute("data") === last_widget) {
+					// alert(widget_app_containers[k].getAttribute("data") + " " + widget_icons[i].getAttribute("data"))
+					// Display block
+
+					for (let j=0; j <= widget_icons.length; j++) {
+						if (widget_icons[j]) {
+							if (widget_icons[j].getAttribute("data") === last_widget) {
+								widget_icons[j].classList.add("widget_icon_selected");
+							}
+
+							else {
+								widget_icons[j].classList.remove("widget_icon_selected");
+							}
+						}
+					}
+
+					widget_app_containers[k].style.display = "block";
+				}
+	
+				else {
+					widget_app_containers[k].style.display = "none";
+				}
+			}
+		}
+	}
+	// If undefined, open tasks
+	else {
+		// For every widget app with data X
+		for (let k=0; k <= widget_app_containers.length; k++) {
+			if (widget_app_containers[k]) {
+				if (widget_app_containers[k].getAttribute("data") === "tasks") {
+					// alert(widget_app_containers[k].getAttribute("data") + " " + widget_icons[i].getAttribute("data"))
+					// Display block
+					widget_app_containers[k].style.display = "block";
+				}
+
+				else {
+					widget_app_containers[k].style.display = "none";
+				}
+			}
+		}
+	}
+})
+
+chrome.storage.sync.get("gcal_link", function(obj) {
+    let current_gcal = obj["gcal_link"];
+	modified_gcal = current_gcal.replace("<iframe", "<iframe class='calendar'")
+	modified_gcal = modified_gcal.replace("WEEK", "AGENDA")
+	modified_gcal = modified_gcal.replace("MONTH", "AGENDA")
+
+    document.getElementById("calendar_container").innerHTML = modified_gcal;
+}) 
+
+// Widgets ^^^

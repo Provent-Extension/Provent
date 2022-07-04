@@ -468,5 +468,3 @@ function start_pomodoro() {
 		clearInterval(interval);
 	}
 }
-
-
