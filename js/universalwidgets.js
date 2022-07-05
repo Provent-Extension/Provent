@@ -187,6 +187,8 @@ for (let i=0; i <= widget_icons.length; i++) {
 	if (widget_icons[i]) {
 		widget_icons[i].addEventListener("click", function() {
 			// alert(widget_icons[i].getAttribute("data"));
+
+			check_widget(widget_icons[i].getAttribute("data"))
 			chrome.storage.sync.set({"last_widget": widget_icons[i].getAttribute("data")}, function() {
 				console.log("Saved previous widget")
 			})
@@ -194,7 +196,7 @@ for (let i=0; i <= widget_icons.length; i++) {
 			// For every widget app with data X
 			for (let k=0; k <= widget_app_containers.length; k++) {
 				// alert(widget_app_containers[i].getAttribute("data"))
-
+				
 				if (widget_app_containers[k]) {
 					if (widget_app_containers[k].getAttribute("data") === widget_icons[i].getAttribute("data")) {
 						// alert(widget_app_containers[k].getAttribute("data") + " " + widget_icons[i].getAttribute("data"))
@@ -228,7 +230,8 @@ chrome.storage.sync.get("last_widget", function(obj) {
 		// For every widget app with data X
 		for (let k=0; k <= widget_app_containers.length; k++) {
 			// alert(widget_app_containers[i].getAttribute("data"))
-
+			
+			check_widget(last_widget)
 			if (widget_app_containers[k]) {
 				if (widget_app_containers[k].getAttribute("data") === last_widget) {
 					// alert(widget_app_containers[k].getAttribute("data") + " " + widget_icons[i].getAttribute("data"))
@@ -274,13 +277,18 @@ chrome.storage.sync.get("last_widget", function(obj) {
 	}
 })
 
-chrome.storage.sync.get("gcal_link", function(obj) {
-    let current_gcal = obj["gcal_link"];
-	modified_gcal = current_gcal.replace("<iframe", "<iframe class='calendar'")
-	modified_gcal = modified_gcal.replace("WEEK", "AGENDA")
-	modified_gcal = modified_gcal.replace("MONTH", "AGENDA")
-
-    document.getElementById("calendar_container").innerHTML = modified_gcal;
-}) 
+function check_widget(widget) {
+	if (widget === "calendar") {
+		chrome.storage.sync.get("gcal_link", function(obj) {
+			let current_gcal = obj["gcal_link"];
+			modified_gcal = current_gcal.replace("<iframe", "<iframe class='calendar'")
+			modified_gcal = modified_gcal.replace("WEEK", "AGENDA")
+			modified_gcal = modified_gcal.replace("MONTH", "AGENDA")
+			
+			
+			document.getElementById("calendar_container").innerHTML = modified_gcal;
+		}) 
+	}
+}
 
 // Widgets ^^^
