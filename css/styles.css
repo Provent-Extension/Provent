@@ -364,7 +364,7 @@ body {
 }
 
 .bookmark_container {
-	background: green;
+	background: white;
 	margin-top: 0px;
 	border-radius: 30px;
 	min-height: 200px;
@@ -376,19 +376,37 @@ body {
 	display: none;
 }
 .youtube_container {
-	background: blue;
+	background: white;
 	margin-top: 0px;
 	border-radius: 30px;
-	min-height: 200px;
+	min-height: 240px;
 	height: auto;
 	width: 90%;
 	display: block;
 	margin: 0 auto;
 	position: relative;
 	display: none;
+	overflow: hidden;
 }
+
+.youtube_playlists_ul {
+	margin-top: -5px;
+	list-style-type: none;
+	padding: 0;
+	position: relative;
+	left: 5%;
+	width: 90%;
+}
+.youtube_playlist_li {
+	padding: 5px;
+	border-bottom: 2px solid #424244;
+}
+.youtube_play_icon {
+	margin-right: 20px;
+}
+
 .spotify_container {
-	background: yellow;
+	background: rgb(6, 237, 95);
 	margin-top: 0px;
 	border-radius: 30px;
 	min-height: 200px;
