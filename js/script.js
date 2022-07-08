@@ -92,16 +92,14 @@ for (let i=0; i <= youtube_playlist.length; i++) {
 
 			var video_link = youtube_playlist[i].getAttribute("data")
 
-			// Playlist
+			// Playlists
 			if (video_link.includes("playlist?list=")) {
 				var playlist_id = video_link.split("https://www.youtube.com/playlist?list=")[1]
 				var new_link = "https://www.youtube.com/embed/videoseries?list=" + playlist_id;
 			}
 			
-			// Normal video
+			// Video
 			else {
-				// https://www.youtube.com/watch?v=w-n_YRNlzx8
-				// https://www.youtube.com/embed/w-n_YRNlzx8
 				var video_link = video_link.split("&ab_channel=")[0]
 				var playlist_id = video_link.split("https://www.youtube.com/watch?v=")[1]
 				var new_link = "https://www.youtube.com/embed/" + playlist_id;
