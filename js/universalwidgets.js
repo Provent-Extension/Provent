@@ -277,6 +277,8 @@ chrome.storage.sync.get("last_widget", function(obj) {
 	}
 })
 
+
+
 function check_widget(widget) {
 	if (widget === "calendar") {
 		chrome.storage.sync.get("gcal_link", function(obj) {
@@ -284,7 +286,6 @@ function check_widget(widget) {
 			modified_gcal = current_gcal.replace("<iframe", "<iframe class='calendar'")
 			modified_gcal = modified_gcal.replace("WEEK", "AGENDA")
 			modified_gcal = modified_gcal.replace("MONTH", "AGENDA")
-			
 			
 			document.getElementById("calendar_container").innerHTML = modified_gcal;
 		}) 

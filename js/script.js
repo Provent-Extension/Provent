@@ -80,3 +80,34 @@ function updateClock () {
 setInterval(updateClock, 1);
 // Time ^^^
 
+// YouTube widget
+
+var youtube_playlist = document.querySelectorAll('[id^=yt_play_btn]');
+youtube_video = document.getElementById("youtube_embed");
+
+for (let i=0; i <= youtube_playlist.length; i++) {
+	// If the widget icon exists
+	if (youtube_playlist[i]) {
+		youtube_playlist[i].addEventListener("click", function() {
+
+			var video_link = youtube_playlist[i].getAttribute("data")
+
+			// Playlists
+			if (video_link.includes("playlist?list=")) {
+				var playlist_id = video_link.split("https://www.youtube.com/playlist?list=")[1]
+				var new_link = "https://www.youtube.com/embed/videoseries?list=" + playlist_id;
+			}
+			
+			// Video
+			else {
+				var video_link = video_link.split("&ab_channel=")[0]
+				var playlist_id = video_link.split("https://www.youtube.com/watch?v=")[1]
+				var new_link = "https://www.youtube.com/embed/" + playlist_id;
+			}
+
+			youtube_video.src = new_link;
+		});
+	}
+}
+
+// YouTube wiget ^^^
