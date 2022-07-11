@@ -1,119 +1,121 @@
-.block_container {
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    background: #FFFFFF;
-    top: 0;
+.proventbs_block_container {
+    position: fixed !important;
+    height: 100vh !important;
+    width: 100vw !important;
+    background: #FFFFFF !important;
+    top: 0 !important;
     z-index: 9999 !important;
-    overflow: hidden;
-    left: 0;
+    overflow: hidden !important;
+    left: 0 !important;
 }
 
-.hero {
-    background: linear-gradient(149.14deg, #D8FBF9 -5.45%, #ECF5F5 81.68%);
-    border-bottom-right-radius: 300px;
-    position: relative;
-    top: 0px;
-    min-height: 80vh;
-    padding: 0px 10%;
-    height: auto;
+.proventbs_hero {
+    background: linear-gradient(149.14deg, #D8FBF9 -5.45%, #ECF5F5 81.68%) !important;
+    border-bottom-right-radius: 300px !important;
+    position: relative !important;
+    top: 0px !important;
+    min-height: 80vh !important;
+    padding: 0px 10% !important;
+    height: auto !important;
 }
 
-.hero:after {
-    content: "";
-    display: table;
-    clear: both;
+.proventbs_hero:after {
+    content: "" !important;
+    display: table !important;
+    clear: both !important;
 }
 
-.hero_column {
-    /* width: 50%; */
-    float: left;
-    position: relative;
-    height: auto;
-	margin: 5% 0px;
+.proventbs_hero_column {
+    /* width: 50% !important; */
+    float: left !important;
+    position: relative !important;
+    height: auto !important;
+	margin: 5% 0px !important;
 }
 
-.hero_left {
-    width: 40%;
+.proventbs_hero_left {
+    width: 40% !important;
 }
-.hero_right {
-    width: 60%;
+.proventbs_hero_right {
+    width: 60% !important;
 }
 
 
-.provent_timer {
-    margin-top: 40px;
-    width: auto;
-    height: 350px;
-    position: relative;
-    right: 80px;
-    float: right;
-    animation: clock_bounce 2s infinite alternate;
-    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+.proventbs_provent_timer {
+    margin-top: 40px !important;
+    width: auto !important;
+    height: 350px !important;
+    position: relative !important;
+    right: 80px !important;
+    float: right !important;
+    animation: clock_bounce 2s infinite alternate !important;
+    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4)) !important;
 }
 
 @keyframes clock_bounce {
-    from {top: -20px;}
-    to {top: 20px;}
+    from {top: -20px !important;}
+    to {top: 20px !important;}
 }
 
-.blocker_message {
-    color: #0D625D;
+.proventbs_blocker_message {
+    color: #0D625D !important;
     font-family: 'Inter', sans-serif  !important;
     font-size: 40px  !important;
-    width: 90%;
-    font-weight: bold;
-    text-align: center;
-    position: relative;
-    margin-top: 10%;
+    width: 90% !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    position: relative !important;
+    margin-top: 10% !important;
+    line-height: 1.5em !important;
 }
 
-.timer {
-    color: #424244;
+.proventbs_timer {
+    color: #424244 !important;
     font-family: 'Roboto', sans-serif  !important;
     font-size: 128px !important;
     font-weight: normal !important;
-    text-align: center;
-    margin-top: 5%;
+    text-align: center !important;
+    margin-top: 5% !important;
+    line-height: 1.5em !important;
 }
 
-.blocksitegraphic {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: auto;
-    z-index: -1;
-    bottom: 0px;
-    background-image: URL(../images/blocksitegraphic.svg);
+.proventbs_blocksitegraphic {
+    position: absolute !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    z-index: -1 !important;
+    bottom: 0px !important;
+    background-image: URL(../images/blocksitegraphic.svg) !important;
 }
 
     
 /* Footer */
 
-.footer_container {
-	position: fixed;
-	width: 100%;
-	top: 92.5%;
-	display: block;
-	margin: 0 auto;
+.proventbs_footer_container {
+	position: fixed !important;
+	width: 100% !important;
+	top: 92.5% !important;
+	display: block !important;
+	margin: 0 auto !important;
 }
 
-.credit {
-	position: relative;
-    bottom: 0;
-    color: #0D625D;
+.proventbs_credit {
+	position: relative !important;
+    bottom: 0 !important;
+    color: #0D625D !important;
     font-family: 'Inter', sans-serif !important;
-    left: 20px;
-    font-size: 1em;
-    margin-top: 20px;
+    left: 20px !important;
+    font-size: 16px !important;
+    margin-top: 20px !important;
 }
-.settings_icon_link {
-	float: right;
-	position: relative;
+.proventbs_settings_icon_link {
+	float: right !important;
+	position: relative !important;
 }
-.settings_icon {
-	color: white;
-	font-size: 20px;
-    filter: drop-shadow(1px 1px 1px rgb(0 0 0 / 0.4));
+.proventbs_settings_icon {
+	color: white !important;
+	font-size: 20px !important;
+    filter: drop-shadow(1px 1px 1px rgb(0 0 0 / 0.4)) !important;
 }
 /* Footer ^^^ */
