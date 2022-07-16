@@ -103,7 +103,8 @@ interval = setInterval(function() {
 
 // If current URL is in that list, turn on the detect_pomo_status interval
 
-
+// https://stackoverflow.com/questions/9862182/on-page-load-event-in-chrome-extensions/9862218#9862218
+// can do this for detecting websites instead ^^^
 
 
 // https://developer.chrome.com/docs/extensions/reference/storage/

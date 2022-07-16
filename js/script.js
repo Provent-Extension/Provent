@@ -111,3 +111,33 @@ for (let i=0; i <= youtube_playlist.length; i++) {
 }
 
 // YouTube wiget ^^^
+
+
+// Spotify widget
+
+var spotify_playlist = document.querySelectorAll('[id^=spotify_play_btn]');
+spotify_video = document.getElementById("spotify_embed");
+
+for (let i=0; i <= spotify_playlist.length; i++) {
+	// If the widget icon exists
+	if (spotify_playlist[i]) {
+		spotify_playlist[i].addEventListener("click", function() {
+
+			var video_link = spotify_playlist[i].getAttribute("data")
+
+			// Playlists
+			var playlist_id_link = video_link.split("https://open.spotify.com/playlist/")[1]
+			var playlist_id = playlist_id_link.split("?go=")[0]
+			var new_link = "https://open.spotify.com/embed/playlist/" + playlist_id + "?utm_source=generator";
+			
+			// https://open.spotify.com/playlist/2kIFMZPXUVuaMYb4HsW4AK?go=1&sp_cid=0ba2de69e27cf22eb572c18b771a6872&utm_source=embed_player_m&utm_medium=desktop&nd=1
+			// https://open.spotify.com/embed/playlist/2kIFMZPXUVuaMYb4HsW4AK?utm_source=generator
+			
+
+
+			spotify_video.src = new_link;
+		});
+	}
+}
+
+// Spotify wiget ^^^
