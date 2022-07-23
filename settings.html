@@ -6,27 +6,110 @@
         <link rel="stylesheet" href="css/settings.css">
     </head>
     <body>
-        <h1>Settings</h1>
+        <a href="index.html">< Back</a>
 
-        <form>
-            <label>Blocked sites:</label>
-            <input id="block_sites_form" class="block_site_form" type="text" value="">
-        </form>
+        <h1 class="settings_title">Settings</h1>
+        <p class="settings_des">Here you can Customize Provent to improve your productivity.</p>
 
-        <button id="update_sites_button">Update</button>
+        <!-- Website blocker -->
+        <div class="option_container">
+            <h2 class="option_title">Block Distracting Sites</h2>
+            <p class="option_des">Add any sites that are common distractors for you! They will be blocked when your pomorodoro timer is activated.</p>
 
-        </br></br></br></br>
+            <form>
+                <input id="block_sites_form" class="option_form" type="url" placeholder="https://www.example.com" value="">
+                <button id="update_sites_button" class="option_button">Add Site</button>
+            </form>
+            
+            <div id="expanded_items" data-option="blocked_sites"  style="display: none;">
+                <input style="width:100%; display: none;" id="block_sites_data" value="">
+                
+                <ul id="blocked_websites_ul">
+              
+                </ul>
+            </div>
 
-        <form>
-            <label>Google Calendar:</label>
-            <input id="gcal_form" class="block_site_form" type="text" value="">
-        </form>
+              <p id="expand" data-option="blocked_sites">Expand ></p>
+        </div>
+        <!-- Website blocker ^^^ -->
 
-        <button id="update_gcal_button">Update</button>
+        <!-- Custom Backgrounds -->
+        <div class="option_container">
+            <h2 class="option_title">Customize Background Theme</h2>
+            <p class="option_des">Submit and select your own images to be a chrome background theme.</p>
+
+            <form>
+                <input id="custom_bg_form" class="option_form" type="url" placeholder="https://www.example-image.com" value="">
+                <button id="upload_bg_button" class="option_button">Upload image</button>
+            </form>
+            
+            <div id="expanded_items" data-option="custom_bg"  style="display: none;">
+                <input style="width:100%; display: none;" id="block_sites_data" value="">
+                
+                <ul id="custom_bg_ul">
+              
+                </ul>
+            </div>
+
+            <p id="expand" data-option="custom_bg">Expand ></p>
+        </div>
+        <!-- Custom backgrounds ^^^ -->
+
+
+        
+        <!-- YouTube -->
+        <div class="option_container">
+            <h2 class="option_title">Add Youtube Playlist(s)</h2>
+            <p class="option_des">Blocked YouTube? No worries! Add your favourite Youtube playlists here and listen to them straight from our home page.</p>
+
+            <form>
+                <input id="youtube_form" class="option_form" type="url" placeholder="https://www.youtube.com/playlist?list=..." value="">
+                <button id="update_youtube_button" class="option_button">Add Playlist</button>
+            </form>
+            
+            <div id="expanded_items" data-option="youtube"  style="display: none;">
+                <input style="width:100%; display: none;" id="youtube_data" value="">
+                
+                <ul id="blocked_websites_ul">
+              
+                </ul>
+            </div>
+
+              <p id="expand" data-option="youtube">Expand ></p>
+        </div>
+        <!-- YouTube ^^^ -->
+
+
+
+                
+        <!-- Google Calendar -->
+        <div class="option_container">
+            <h2 class="option_title">Add your Google Calendar</h2>
+            <p class="option_des">Want a convenient way to check your schedule? Add a Google Calendar embed, and access your calendar anywhere you go!</p>
+
+            <form>
+                <input id="gcal_form" class="option_form" type="url" placeholder="EMBED URL EXAMPLE" value="">
+                <button id="update_gcal_button" class="option_button">Add Google Calendar</button>
+            </form>
+
+            <!-- <form>
+                <input id="gcal_form" class="block_site_form" type="text" value="">
+                <button id="update_gcal_button">Update</button>
+            </form> -->
+            
+            <div id="expanded_items" data-option="gcal"  style="display: none;">
+            
+            </div>
+
+              <p id="expand" data-option="gcal">Expand ></p>
+        </div>
+        <!-- Google Calendar ^^^ -->
         
     </body>
 
 
 
     <script src="js/settings.js"></script>
+    <!-- Fontawesome -->
+    <script src="js/fontawesome.js"></script>
 </html>

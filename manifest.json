@@ -8,7 +8,7 @@
   },
 
   "permissions": [
-    "tabs", "storage"
+    "tabs", "storage", "unlimitedStorage"
   ],
 
   "action": {
